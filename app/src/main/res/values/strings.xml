@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Movies2022</string>
+    <string name="tv_movie_title">Título de la película</string>
+    <string name="tv_release_date">Fecha de lanzamiento:</string>
+    <string name="tv_date_data">03-dic-2007</string>
+    <string name="tv_votes_average">Promedio de votos:</string>
+</resources>
