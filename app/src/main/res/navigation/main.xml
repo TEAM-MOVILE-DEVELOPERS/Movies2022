@@ -18,5 +18,9 @@
         android:id="@+id/detailFragment"
         android:name="com.camihruiz.movies2022.ui.detail.DetailFragment"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" />
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="movie"
+            app:argType="com.camihruiz.movies2022.server.model.Movie" />
+    </fragment>
 </navigation>

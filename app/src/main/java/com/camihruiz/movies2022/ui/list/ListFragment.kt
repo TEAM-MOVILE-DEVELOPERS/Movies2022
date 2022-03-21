@@ -6,8 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.camihruiz.movies2022.databinding.FragmentListBinding
+import com.camihruiz.movies2022.server.model.Movie
 
 class ListFragment : Fragment() {
 	
@@ -41,10 +43,19 @@ class ListFragment : Fragment() {
 		}
 		
 		listViewModel.getMovies()
-		
+		listViewModel.loadMoviesDone.observe(viewLifecycleOwner){result ->
+			onLoadMoviesDoneSubscribe(result)
+		}
 	}
 	
-	private fun onMovieItemClicked(it: Movie) {
-		// TODO(Definir click a la lista)
+	private fun onLoadMoviesDoneSubscribe(moviesList: ArrayList<Movie>?) {
+		// let es un condicional implícito que pregunta si moviesList no es
+		moviesList?.let{
+			moviesAdapter.appendItems(it)
+		}
+	}
+	
+	private fun onMovieItemClicked(movie: Movie) {
+		findNavController().navigate(ListFragmentDirections.actionListFragmentToDetailFragment(movie))
 	}
 }

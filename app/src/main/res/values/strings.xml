@@ -4,4 +4,6 @@
     <string name="tv_release_date">Fecha de lanzamiento:</string>
     <string name="tv_date_data">03-dic-2007</string>
     <string name="tv_votes_average">Promedio de votos:</string>
+    <string name="poster">Imagen de película</string>
+    <string name="summary_text_view">Resumen</string>
 </resources>
